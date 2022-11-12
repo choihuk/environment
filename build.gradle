@@ -10,6 +10,7 @@ plugins {
 	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
 	id 'java'
 	id 'jacoco'
+	id 'org.sonarqube' version "3.4.0.2513"
 }
 
 jacoco {
@@ -20,7 +21,7 @@ jacocoTestReport {
 	reports {
 		// 원하는 리포트를 켜고 끌 수 있습니다.
 		html.enabled true
-		xml.enabled false
+		xml.enabled true
 		csv.enabled false
 
 //  각 리포트 타입 마다 리포트 저장 경로를 설정할 수 있습니다.
@@ -43,6 +44,16 @@ jacocoTestCoverageVerification {
 
 //			excludes("*..*")
 		}
+	}
+}
+
+sonarqube {
+	properties {
+		property "sonar.projectKey", "Rchicken_booktudy"
+		property "sonar.organization", "rchicken"
+		property "sonar.host.url", "https://sonarcloud.io"
+		// jacoco를 이용한 코드 커버리지 체크시 추가
+		property "sonar.coverage.jacoco.xmlReportPaths", "${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
 	}
 }
 
