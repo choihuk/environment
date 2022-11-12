@@ -1,11 +1,9 @@
-package test.environment;
+package test.environment.entity;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-import test.environment.entity.Member;
-import test.environment.entity.Team;
 
 import javax.persistence.EntityManager;
 import java.util.List;
