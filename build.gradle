@@ -57,6 +57,7 @@ sonarqube {
 		property "sonar.projectKey", "choihuk_environment"
 		property "sonar.organization", "choihuk"
 		property "sonar.host.url", "https://sonarcloud.io"
+		// jacoco 코드 커버리지 결과를 sonarqube에 적용
 		property "sonar.coverage.jacoco.xmlReportPaths", "${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
 	}
 }
