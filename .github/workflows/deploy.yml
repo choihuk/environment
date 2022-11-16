@@ -30,7 +30,7 @@ jobs:
         with:
           files: ${{ env.APP_PATH }}
         env:
-          spring.datasource.url: ${{ secrete.RDS_RUL }}
+          spring.datasource.url: ${{ secrete.RDS_URL }}
           spring.datasource.username: admin
           spring.datasource.password: ${{ secrete.RDS_PASSWORD }}
 
