@@ -30,9 +30,9 @@ jobs:
         with:
           files: ${{ env.APP_PATH }}
         env:
-          spring.datasource.url: ${{ secrete.RDS_URL }}
+          spring.datasource.url: ${{ secrets.RDS_URL }}
           spring.datasource.username: admin
-          spring.datasource.password: ${{ secrete.RDS_PASSWORD }}
+          spring.datasource.password: ${{ secrets.RDS_PASSWORD }}
 
       - name: Cache Gradle packages
         uses: actions/cache@v1
