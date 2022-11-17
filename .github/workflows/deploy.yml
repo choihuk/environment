@@ -55,15 +55,15 @@ jobs:
 
       - name: Deploy EC2
         uses: appleboy/ssh-action@master
-          with:
-            host: ${{ secrets.EC2_HOST_IP }}
-            username: ubuntu
-            key: ${{ secrets.EC2_KEY }}
-            port: 22
-            script: |
-              docker stop spring
-              docker rm spring
-              docker rmi choihyeok/environment
-              docker pull choihyeok/environment
+        with:
+          host: ${{ secrets.EC2_HOST_IP }}
+          username: ubuntu
+          key: ${{ secrets.EC2_KEY }}
+          port: 22
+          script: |
+            docker stop spring
+            docker rm spring
+            docker rmi choihyeok/environment
+            docker pull choihyeok/environment
 #              docker run -d -p 8080:8080 --name spring choihyeok/environment
               
